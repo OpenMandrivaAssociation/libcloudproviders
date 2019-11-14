@@ -1,0 +1,77 @@
+%define major 0
+%define libname   %mklibname cloudproviders %{major}
+%define girname   %mklibname cloudproviders-gir %{version}
+%define develname %mklibname cloudproviders -d
+
+Name:           libcloudproviders
+Version:        0.3.0
+Release:        %mkrel 4
+Summary:        Library for integration of cloud storage providers
+Group:          System/Libraries
+License:        LGPLv3+
+URL:            https://gitlab.gnome.org/World/libcloudproviders
+Source0:        https://gitlab.gnome.org/World/libcloudproviders/uploads/e97a550ebbf85e753c4df5692a86b39d/libcloudproviders-%{version}.tar.xz
+BuildRequires:  gtk-doc
+BuildRequires:  meson
+BuildRequires:  systemd
+BuildRequires:  vala-tools
+BuildRequires:  pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+
+%description
+Cross desktop library for desktop integration of cloud storage providers and sync tools.
+
+%package -n %{libname}
+Summary:    Library for integration of cloud storage providers
+Group:      System/Libraries
+
+%description -n %{libname}
+This package contains the library files required for running services built
+using %{name}.
+
+%package -n %{girname}
+Summary:    GObject Introspection interface description for CloudProviders
+Group:      System/Libraries
+Requires:   %{libname} = %{version}-%{release}
+Conflicts:  %{_lib}cloudproviders-devel < 0.3.0-3
+
+%description -n %{girname}
+GObject Introspection interface description for CloudProviders.
+
+%package -n %{develname}
+Summary:    Development files for %{name}
+Group:      Development/C
+Requires:   %{libname} = %{version}-%{release}
+Requires:   %{girname} = %{version}-%{release}
+
+%description -n %{develname}
+This package contains libraries and header files for developing applications
+that use %{name}.
+
+%prep
+%autosetup -p1
+
+%build
+%meson -Denable-gtk-doc=true
+%meson_build
+
+%install
+%meson_install
+
+%files -n %{libname}
+%doc LICENSE
+%doc CHANGELOG README.md
+%{_libdir}/libcloudproviders.so.%{major}*
+
+%files -n %{girname}
+%{_libdir}/girepository-1.0/CloudProviders-%{version}.typelib
+
+%files -n %{develname}
+%doc %{_datadir}/gtk-doc/html/libcloudproviders/
+%{_includedir}/cloudproviders/
+%{_libdir}/pkgconfig/cloudproviders.pc
+%{_libdir}/libcloudproviders.so
+%{_datadir}/gir-1.0/CloudProviders-%{version}.gir
+%{_datadir}/vala/vapi/cloudproviders.deps
+%{_datadir}/vala/vapi/cloudproviders.vapi
