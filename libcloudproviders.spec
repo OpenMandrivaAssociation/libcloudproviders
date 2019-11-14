@@ -5,12 +5,12 @@
 
 Name:           libcloudproviders
 Version:        0.3.0
-Release:        %mkrel 4
+Release:        1
 Summary:        Library for integration of cloud storage providers
 Group:          System/Libraries
 License:        LGPLv3+
 URL:            https://gitlab.gnome.org/World/libcloudproviders
-Source0:        https://gitlab.gnome.org/World/libcloudproviders/uploads/e97a550ebbf85e753c4df5692a86b39d/libcloudproviders-%{version}.tar.xz
+Source0:        https://gitlab.gnome.org/World/libcloudproviders/-/archive/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:  gtk-doc
 BuildRequires:  meson
 BuildRequires:  systemd
