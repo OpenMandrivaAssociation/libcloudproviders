@@ -34,7 +34,6 @@ using %{name}.
 Summary:    GObject Introspection interface description for CloudProviders
 Group:      System/Libraries
 Requires:   %{libname} = %{version}-%{release}
-Conflicts:  %{_lib}cloudproviders-devel < 0.3.0-3
 
 %description -n %{girname}
 GObject Introspection interface description for CloudProviders.
