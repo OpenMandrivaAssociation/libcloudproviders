@@ -1,4 +1,5 @@
 %define major 0
+%define api 0.3
 %define libname   %mklibname cloudproviders %{major}
 %define girname   %mklibname cloudproviders-gir %{version}
 %define develname %mklibname cloudproviders -d
@@ -64,13 +65,13 @@ that use %{name}.
 %{_libdir}/libcloudproviders.so.%{major}*
 
 %files -n %{girname}
-#{_libdir}/girepository-1.0/CloudProviders-%{version}.typelib
+%{_libdir}/girepository-1.0/CloudProviders-%{api}.typelib
 
 %files -n %{develname}
 %doc %{_datadir}/gtk-doc/html/libcloudproviders/
 %{_includedir}/cloudproviders/
 %{_libdir}/pkgconfig/cloudproviders.pc
 %{_libdir}/libcloudproviders.so
-#{_datadir}/gir-1.0/CloudProviders-%{version}.gir
+%{_datadir}/gir-1.0/CloudProviders-%{api}.gir
 %{_datadir}/vala/vapi/cloudproviders.deps
 %{_datadir}/vala/vapi/cloudproviders.vapi
