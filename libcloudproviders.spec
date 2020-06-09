@@ -71,6 +71,6 @@ that use %{name}.
 %{_includedir}/cloudproviders/
 %{_libdir}/pkgconfig/cloudproviders.pc
 %{_libdir}/libcloudproviders.so
-%{_datadir}/gir-1.0/CloudProviders-%{version}.gir
+#{_datadir}/gir-1.0/CloudProviders-%{version}.gir
 %{_datadir}/vala/vapi/cloudproviders.deps
 %{_datadir}/vala/vapi/cloudproviders.vapi
