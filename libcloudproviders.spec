@@ -64,7 +64,7 @@ that use %{name}.
 %{_libdir}/libcloudproviders.so.%{major}*
 
 %files -n %{girname}
-%{_libdir}/girepository-1.0/CloudProviders-%{version}.typelib
+#{_libdir}/girepository-1.0/CloudProviders-%{version}.typelib
 
 %files -n %{develname}
 %doc %{_datadir}/gtk-doc/html/libcloudproviders/
