@@ -5,8 +5,8 @@
 %define develname %mklibname cloudproviders -d
 
 Name:           libcloudproviders
-Version:        0.3.1
-Release:        2
+Version:        0.3.2
+Release:        1
 Summary:        Library for integration of cloud storage providers
 Group:          System/Libraries
 License:        LGPLv3+
