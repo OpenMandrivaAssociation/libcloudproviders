@@ -68,7 +68,6 @@ that use %{name}.
 %{_libdir}/girepository-1.0/CloudProviders-%{api}.typelib
 
 %files -n %{develname}
-%doc %{_datadir}/gtk-doc/html/libcloudproviders/
 %{_includedir}/cloudproviders/
 %{_libdir}/pkgconfig/cloudproviders.pc
 %{_libdir}/libcloudproviders.so
