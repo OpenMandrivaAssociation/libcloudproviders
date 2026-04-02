@@ -12,7 +12,7 @@ Group:          System/Libraries
 License:        LGPLv3+
 URL:            https://gitlab.gnome.org/World/libcloudproviders
 Source0:        https://gitlab.gnome.org/World/libcloudproviders/-/archive/%{version}/%{name}-%{version}.tar.bz2
-BuildRequires:  gtk-doc
+BuildRequires:  gi-docgen
 BuildRequires:  meson
 BuildRequires:  systemd
 BuildRequires:  vala-tools
